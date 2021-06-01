@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_05_31_161559) do
   end
 
   create_table "reactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "type"
+    t.integer "emote"
     t.bigint "user_id", null: false
     t.bigint "comment_id", null: false
     t.datetime "created_at", precision: 6, null: false

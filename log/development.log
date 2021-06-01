@@ -1151,3 +1151,119 @@ Processing by CommentsController#index as */*
 Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 2.1ms | Allocations: 4557)
 
 
+Started GET "/posts/1/comments" for 127.0.0.1 at 2021-06-01 15:56:42 +0300
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by CommentsController#index as */*
+  Parameters: {"post_id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/comments_controller.rb:42:in `set_post'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReaction Load (0.3ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` WHERE `reactions`.`comment_id` = 1[0m
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.25ms)
+Completed 200 OK in 45ms (Views: 30.1ms | ActiveRecord: 6.0ms | Allocations: 19161)
+
+
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mReaction Load (0.9ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` ORDER BY `reactions`.`id` ASC LIMIT 1[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` ORDER BY `comments`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReaction Create (0.3ms)[0m  [1m[32mINSERT INTO `reactions` (`user_id`, `comment_id`, `created_at`, `updated_at`) VALUES (1, 1, '2021-06-01 12:58:23.222963', '2021-06-01 12:58:23.222963')[0m
+  [1m[35m (23.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mReaction Load (0.9ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` ORDER BY `reactions`.`id` ASC LIMIT 1[0m
+  [1m[36mReaction Load (0.3ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` ORDER BY `reactions`.`id` ASC LIMIT 1[0m
+  [1m[36mReaction Load (0.8ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` ORDER BY `reactions`.`id` ASC LIMIT 1[0m
+  [1m[36mReaction Load (0.4ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` ORDER BY `reactions`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 1 LIMIT 1[0m
+  [1m[36mReaction Update (0.2ms)[0m  [1m[33mUPDATE `reactions` SET `reactions`.`type` = 0, `reactions`.`updated_at` = '2021-06-01 12:59:18.378293' WHERE `reactions`.`id` = 1[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/posts/1/comments" for 127.0.0.1 at 2021-06-01 15:59:57 +0300
+Processing by CommentsController#index as */*
+  Parameters: {"post_id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/comments_controller.rb:42:in `set_post'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReaction Load (0.4ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` WHERE `reactions`.`comment_id` = 1[0m
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.24ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.0ms | Allocations: 3255)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'like'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Reaction.inheritance_column to use another column for that information.):
+  
+app/controllers/comments_controller.rb:6:in `index'
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('2733550968560133855', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateReactions (20210531161559)
+  [1m[35m (50.4ms)[0m  [1m[35mDROP TABLE `reactions`[0m
+  [1m[36mprimary::SchemaMigration Destroy (9.7ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20210531161559'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('2733550968560133855')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('2733550968560133855', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateReactions (20210531161559)
+  [1m[35m (109.7ms)[0m  [1m[35mCREATE TABLE `reactions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `emote` int, `user_id` bigint NOT NULL, `comment_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_reactions_on_user_id`  (`user_id`),  INDEX `index_reactions_on_comment_id`  (`comment_id`), CONSTRAINT `fk_rails_9f02fc96a0`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_3ecbe30292`
+FOREIGN KEY (`comment_id`)
+  REFERENCES `comments` (`id`)
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210531161559')[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('2733550968560133855')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` ORDER BY `comments`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` ORDER BY `comments`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReaction Create (1.2ms)[0m  [1m[32mINSERT INTO `reactions` (`emote`, `user_id`, `comment_id`, `created_at`, `updated_at`) VALUES (0, 1, 1, '2021-06-01 13:01:24.962897', '2021-06-01 13:01:24.962897')[0m
+  [1m[35m (26.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` ORDER BY `comments`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReaction Create (0.3ms)[0m  [1m[32mINSERT INTO `reactions` (`emote`, `user_id`, `comment_id`, `created_at`, `updated_at`) VALUES (6, 1, 1, '2021-06-01 13:01:59.279705', '2021-06-01 13:01:59.279705')[0m
+  [1m[35m (21.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` ORDER BY `comments`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` ORDER BY `comments`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReaction Create (0.6ms)[0m  [1m[32mINSERT INTO `reactions` (`emote`, `user_id`, `comment_id`, `created_at`, `updated_at`) VALUES (2, 1, 1, '2021-06-01 13:03:01.486825', '2021-06-01 13:03:01.486825')[0m
+  [1m[35m (24.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/posts/1/comments" for 127.0.0.1 at 2021-06-01 16:03:07 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by CommentsController#index as */*
+  Parameters: {"post_id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/comments_controller.rb:42:in `set_post'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1[0m
+  ↳ app/controllers/comments_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mReaction Load (0.3ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` WHERE `reactions`.`comment_id` = 1[0m
+[active_model_serializers]   ↳ app/controllers/comments_controller.rb:6:in `index'
+[active_model_serializers] No serializer found for resource: #<Reaction id: 1, emote: "like", user_id: 1, comment_id: 1, created_at: "2021-06-01 13:01:24", updated_at: "2021-06-01 13:01:24">
+[active_model_serializers] No serializer found for resource: #<Reaction id: 1, emote: "like", user_id: 1, comment_id: 1, created_at: "2021-06-01 13:01:24", updated_at: "2021-06-01 13:01:24">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.59ms)
+Completed 200 OK in 30ms (Views: 15.9ms | ActiveRecord: 6.5ms | Allocations: 16912)
+
+
