@@ -1,8 +1,7 @@
 class Api::V1::CommentsController < ApplicationController
   before_action :authenticate_api_v1_user!
   before_action :set_post
-  before_action :set_comment, only: %i[update destroy]
-  before_action :owned_comment, only: %i[update destroy]
+  before_action :set_comment, :owned_comment, only: %i[update destroy]
 
   def index
     render json: @post.comments, status: :ok

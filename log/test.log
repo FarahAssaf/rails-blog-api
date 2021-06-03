@@ -28814,3 +28814,891 @@ Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 1.4ms | Allocations: 2183)
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '1shira_kihn@example.net' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('1shira_kihn@example.net', '$2a$04$beZoPZ4yHTp9kx3hDXpzhOkVkHKA5uAAg1TVhak1hHpbzdceiO8ka', '4QxY-vzAm7V6QsSdmQSH', '2021-06-03 19:04:29', '1shira_kihn@example.net', '2021-06-03 19:04:29.343678', '2021-06-03 19:04:29.343678')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1275, '2021-06-03 19:04:29.351525', '2021-06-03 19:04:29.351525')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1275, 1237, '2021-06-03 19:04:29.359041', '2021-06-03 19:04:29.359041')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReaction Create (0.2ms)[0m  [1m[32mINSERT INTO `reactions` (`emote`, `user_id`, `comment_id`, `created_at`, `updated_at`) VALUES (0, 1275, 571, '2021-06-03 19:04:29.366224', '2021-06-03 19:04:29.366224')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '2carlton@example.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('2carlton@example.org', '$2a$04$fEhchHDrcwOQRyQSV2SzWuC4IvJfHyCxrAWuwEOPGv.nAbKgf.u4G', 'KQERXj8C9oECo7iMsRst', '2021-06-03 19:04:29', '2carlton@example.org', '2021-06-03 19:04:29.369982', '2021-06-03 19:04:29.369982')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff 2.', 1276, '2021-06-03 19:04:29.371511', '2021-06-03 19:04:29.371511')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1275, 1238, '2021-06-03 19:04:29.373016', '2021-06-03 19:04:29.373016')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"TCdQa7JBsVuHJo7UTA8Rog\":{\"token\":\"$2a$04$HXnR51RKrt06xgyJUVa0I.V.SMiba4FultrbdZIIiDpEEkJJRhcAG\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.375651' WHERE `users`.`id` = 1275[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posts/1237/comments" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::CommentsController#index as HTML
+  Parameters: {"post_id"=>"1237"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '1shira_kihn@example.net' LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1237 LIMIT 1[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1237[0m
+[active_model_serializers]   [1m[36mReaction Load (0.2ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` WHERE `reactions`.`comment_id` = 571[0m
+[active_model_serializers] No serializer found for resource: #<Reaction id: 161, emote: "like", user_id: 1275, comment_id: 571, created_at: "2021-06-03 19:04:29", updated_at: "2021-06-03 19:04:29">
+[active_model_serializers] No serializer found for resource: #<Reaction id: 161, emote: "like", user_id: 1275, comment_id: 571, created_at: "2021-06-03 19:04:29", updated_at: "2021-06-03 19:04:29">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.12ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1275 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1275 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 13ms (Views: 5.4ms | ActiveRecord: 1.9ms | Allocations: 7293)
+  [1m[35m (6.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '3orlando_heaney@example.net' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('3orlando_heaney@example.net', '$2a$04$ayHGeFu.iRiWKT57rmKe4uywNnzvP6Qg2atZkbX5JnJ352PMsmg3u', '5ymCAMmH9vjv43v-asy_', '2021-06-03 19:04:29', '3orlando_heaney@example.net', '2021-06-03 19:04:29.421564', '2021-06-03 19:04:29.421564')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1277, '2021-06-03 19:04:29.427394', '2021-06-03 19:04:29.427394')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1277, 1239, '2021-06-03 19:04:29.430808', '2021-06-03 19:04:29.430808')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReaction Create (0.2ms)[0m  [1m[32mINSERT INTO `reactions` (`emote`, `user_id`, `comment_id`, `created_at`, `updated_at`) VALUES (0, 1277, 573, '2021-06-03 19:04:29.432506', '2021-06-03 19:04:29.432506')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '4rusty_hahn@example.net' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('4rusty_hahn@example.net', '$2a$04$02fnvg0wrFJk6HbkygpFPeOUwayX9ks2Cac4b02y9PkRmq75phbDy', 'WsCntgb79CXuszQxtvfK', '2021-06-03 19:04:29', '4rusty_hahn@example.net', '2021-06-03 19:04:29.436181', '2021-06-03 19:04:29.436181')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff 2.', 1278, '2021-06-03 19:04:29.437571', '2021-06-03 19:04:29.437571')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1277, 1240, '2021-06-03 19:04:29.438985', '2021-06-03 19:04:29.438985')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"i4Eyq0gJi1xo21fWL3k2vg\":{\"token\":\"$2a$04$wmarrwvkpuv7S2.XuBdUo.Wh6AY3BvYR22xZi2LvERPQkpxWBBjuS\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.441775' WHERE `users`.`id` = 1277[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posts/1239/comments" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::CommentsController#index as HTML
+  Parameters: {"post_id"=>"1239"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '3orlando_heaney@example.net' LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1239 LIMIT 1[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1239[0m
+[active_model_serializers]   [1m[36mReaction Load (0.2ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` WHERE `reactions`.`comment_id` = 573[0m
+[active_model_serializers] No serializer found for resource: #<Reaction id: 162, emote: "like", user_id: 1277, comment_id: 573, created_at: "2021-06-03 19:04:29", updated_at: "2021-06-03 19:04:29">
+[active_model_serializers] No serializer found for resource: #<Reaction id: 162, emote: "like", user_id: 1277, comment_id: 573, created_at: "2021-06-03 19:04:29", updated_at: "2021-06-03 19:04:29">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.22ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1277 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1277 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 1.7ms | ActiveRecord: 1.5ms | Allocations: 2685)
+  [1m[35m (4.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '5wade@example.net' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('5wade@example.net', '$2a$04$GBmummh/EE7wgBEyevcwseCK6LT.m02E65r3eIw7KAGn4XwA2zSyy', '2YkdU5isKgkPzkvvbC_5', '2021-06-03 19:04:29', '5wade@example.net', '2021-06-03 19:04:29.461854', '2021-06-03 19:04:29.461854')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1279, '2021-06-03 19:04:29.463322', '2021-06-03 19:04:29.463322')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"6R31OLTOoc9cNeK7lXwmfw\":{\"token\":\"$2a$04$oYRDUTjavGC2Kyo01/gszu8UIsl0ObHn.DULIgNh1rg6KhRDV8ViW\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.465649' WHERE `users`.`id` = 1279[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/posts/1241/comments" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::CommentsController#create as HTML
+  Parameters: {"comment"=>{"body"=>"Yay!"}, "post_id"=>"1241"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '5wade@example.net' LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1241 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1279 LIMIT 1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('Yay!', 1279, 1241, '2021-06-03 19:04:29.474988', '2021-06-03 19:04:29.474988')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1279 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1279 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 9ms (Views: 0.8ms | ActiveRecord: 1.7ms | Allocations: 3424)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `posts`[0m
+  [1m[35m (5.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '6orville.williamson@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('6orville.williamson@example.com', '$2a$04$612RUkla9QpkloZ3oIDleurnwbJSiQOV/ScFuzoqJj0jxqPTn2vZi', 'MuHStGtVuYhKpGoDyFdz', '2021-06-03 19:04:29', '6orville.williamson@example.com', '2021-06-03 19:04:29.489088', '2021-06-03 19:04:29.489088')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1280, '2021-06-03 19:04:29.490710', '2021-06-03 19:04:29.490710')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"GiDvCfeDbeWEFPdxUvO0SQ\":{\"token\":\"$2a$04$iUy5IvEHyxt14u0ZPHyx2.GbYeSN/x0/0dq2JMaE1IyiQiWWXMcku\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.493074' WHERE `users`.`id` = 1280[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/posts/1242/comments" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::CommentsController#create as HTML
+  Parameters: {"comment"=>{"body"=>"Yay!"}, "post_id"=>"1242"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '6orville.williamson@example.com' LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1242 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1280 LIMIT 1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('Yay!', 1280, 1242, '2021-06-03 19:04:29.500055', '2021-06-03 19:04:29.500055')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1280 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1280 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 7ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 2820)
+  [1m[35m (4.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '7laurine.heel@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('7laurine.heel@example.com', '$2a$04$fwtKorxD2OtWNyoygpWC7uPx9b6WwveLwnXn5FQEfMK7UZmaRIWGi', '1nLHXD5q4oasG4zQQzSh', '2021-06-03 19:04:29', '7laurine.heel@example.com', '2021-06-03 19:04:29.513086', '2021-06-03 19:04:29.513086')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1281, '2021-06-03 19:04:29.514497', '2021-06-03 19:04:29.514497')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.1ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1281, 1243, '2021-06-03 19:04:29.515564', '2021-06-03 19:04:29.515564')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"3Ky_h4Hkr5C0A0D1TL7uSQ\":{\"token\":\"$2a$04$MbGMIXkiNE5RM6k0Tj07UOhGrcD7hCLTDpZ/jtcbkMpqppZH/KLWi\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.517751' WHERE `users`.`id` = 1281[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/api/v1/posts/1243/comments/577" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::CommentsController#update as HTML
+  Parameters: {"comment"=>{"body"=>"Yay!"}, "post_id"=>"1243", "id"=>"577"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '7laurine.heel@example.com' LIMIT 1[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1243 LIMIT 1[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1243 AND `comments`.`id` = 577 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1281 LIMIT 1[0m
+  [1m[36mComment Update (0.3ms)[0m  [1m[33mUPDATE `comments` SET `comments`.`body` = 'Yay!', `comments`.`updated_at` = '2021-06-03 19:04:29.525242' WHERE `comments`.`id` = 577[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1281 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1281 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 2965)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 577 LIMIT 1[0m
+  [1m[35m (5.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '8faye_stracke@example.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('8faye_stracke@example.org', '$2a$04$0hcNOvXGCOui.1QlocYyMO9y1Y0LDPn4ReIwaP1gUmXcLkOzBvhdS', '9MjU7bbiZiFcWCieLqC6', '2021-06-03 19:04:29', '8faye_stracke@example.org', '2021-06-03 19:04:29.538557', '2021-06-03 19:04:29.538557')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1282, '2021-06-03 19:04:29.539952', '2021-06-03 19:04:29.539952')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.1ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1282, 1244, '2021-06-03 19:04:29.541087', '2021-06-03 19:04:29.541087')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"uSYW3TlAXYiLNrmcNo8V_g\":{\"token\":\"$2a$04$7labovVHehxRSUSe1dkw5uWN9Ocya7V7jWzfRGdNef.3cdX7hqB4S\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.543424' WHERE `users`.`id` = 1282[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/api/v1/posts/1244/comments/578" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::CommentsController#update as HTML
+  Parameters: {"comment"=>{"body"=>"Yay!"}, "post_id"=>"1244", "id"=>"578"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '8faye_stracke@example.org' LIMIT 1[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1244 LIMIT 1[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1244 AND `comments`.`id` = 578 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1282 LIMIT 1[0m
+  [1m[36mComment Update (0.2ms)[0m  [1m[33mUPDATE `comments` SET `comments`.`body` = 'Yay!', `comments`.`updated_at` = '2021-06-03 19:04:29.550856' WHERE `comments`.`id` = 578[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1282 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1282 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 2945)
+  [1m[35m (6.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '9olympia@example.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (10.7ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('9olympia@example.org', '$2a$04$hHcgaZ9Zep3TEJQsDfFTiOwZXHqyBUjz50qidbxo7dMx4ID7CjgIC', '-oge5W6HC2awH4-UAQqz', '2021-06-03 19:04:29', '9olympia@example.org', '2021-06-03 19:04:29.564160', '2021-06-03 19:04:29.564160')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (13.3ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1283, '2021-06-03 19:04:29.576307', '2021-06-03 19:04:29.576307')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1283, 1245, '2021-06-03 19:04:29.591103', '2021-06-03 19:04:29.591103')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '10adriane.kreiger@example.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('10adriane.kreiger@example.org', '$2a$04$vNlxsJ8OQmzZzZz0HAs1B.Hjqw8dRYdzANVvoz7ZxYxy60ta77XXm', 't5fNzSa46DvxxTzFsf7z', '2021-06-03 19:04:29', '10adriane.kreiger@example.org', '2021-06-03 19:04:29.595138', '2021-06-03 19:04:29.595138')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"Waj8Yd5Y7g0xxcRSRM45qA\":{\"token\":\"$2a$04$Jb8Cvlz.09uxEi/Cu9YwH.4iNC/7xrGCyhFmkbH7g1A3pynAxqOcO\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.597816' WHERE `users`.`id` = 1284[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/api/v1/posts/1245/comments/579" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::CommentsController#update as HTML
+  Parameters: {"comment"=>{"body"=>"Yay!"}, "post_id"=>"1245", "id"=>"579"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '10adriane.kreiger@example.org' LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1245 LIMIT 1[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1245 AND `comments`.`id` = 579 LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Filter chain halted as :owned_comment rendered or redirected
+Completed 422 Unprocessable Entity in 4ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 861)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 579 LIMIT 1[0m
+  [1m[35m (5.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '11gonzalo@example.net' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('11gonzalo@example.net', '$2a$04$4Kv2QG0tfC92WfgHydV4NeJ4oi9Bg54xS.fsAfUM6R9ioSMJYpgEO', 'c86XG_F1-o-VbndAd12g', '2021-06-03 19:04:29', '11gonzalo@example.net', '2021-06-03 19:04:29.615698', '2021-06-03 19:04:29.615698')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1285, '2021-06-03 19:04:29.617282', '2021-06-03 19:04:29.617282')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1285, 1246, '2021-06-03 19:04:29.618499', '2021-06-03 19:04:29.618499')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"NYLdNHZ01xLgN8qIQbe5-Q\":{\"token\":\"$2a$04$fGHzrQ8v197x98ImWxe36OmpRQXEBwou/bC0s5Hg3HiLYsfsIQ3j6\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.620977' WHERE `users`.`id` = 1285[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/posts/1246/comments/580" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::CommentsController#destroy as HTML
+  Parameters: {"post_id"=>"1246", "id"=>"580"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '11gonzalo@example.net' LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1246 LIMIT 1[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1246 AND `comments`.`id` = 580 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReaction Load (0.2ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` WHERE `reactions`.`comment_id` = 580[0m
+  [1m[36mComment Destroy (0.2ms)[0m  [1m[31mDELETE FROM `comments` WHERE `comments`.`id` = 580[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1285 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1285 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 2547)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `comments`[0m
+  [1m[35m (9.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '12sidney@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('12sidney@example.com', '$2a$04$f2qO/t6rOh2/n.NuH9SrnugV5FmSuJwo60WGbTKrQbHhFPXO4eRey', 'FYX-GUKaL2nfZTAedQtB', '2021-06-03 19:04:29', '12sidney@example.com', '2021-06-03 19:04:29.646072', '2021-06-03 19:04:29.646072')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1286, '2021-06-03 19:04:29.647501', '2021-06-03 19:04:29.647501')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.1ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1286, 1247, '2021-06-03 19:04:29.648638', '2021-06-03 19:04:29.648638')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"p5h7zQ7evdtBazvOUiwrOA\":{\"token\":\"$2a$04$MmZqV2.6Umx7Zcmq47ePo.c0Y.Dp0ffevs1mjX6fROXsol57CeY4q\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.650945' WHERE `users`.`id` = 1286[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/posts/1247/comments/581" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::CommentsController#destroy as HTML
+  Parameters: {"post_id"=>"1247", "id"=>"581"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '12sidney@example.com' LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1247 LIMIT 1[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1247 AND `comments`.`id` = 581 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReaction Load (0.2ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` WHERE `reactions`.`comment_id` = 581[0m
+  [1m[36mComment Destroy (0.2ms)[0m  [1m[31mDELETE FROM `comments` WHERE `comments`.`id` = 581[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1286 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1286 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 2517)
+  [1m[35m (7.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '13noel_dare@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('13noel_dare@example.com', '$2a$04$JvQ5x4i73g5lHzXPzvowFeJJ/oO/EvJ0Z9GPtngTIH/iZilIt19da', '51dyxYvoiAmHmGF6XShD', '2021-06-03 19:04:29', '13noel_dare@example.com', '2021-06-03 19:04:29.672896', '2021-06-03 19:04:29.672896')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1287, '2021-06-03 19:04:29.674593', '2021-06-03 19:04:29.674593')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.1ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1287, 1248, '2021-06-03 19:04:29.675845', '2021-06-03 19:04:29.675845')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '14elbert@example.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('14elbert@example.org', '$2a$04$3/9lsLnODfAgdeeQK/VRkuMhCJqDoMRIlFw2J1.MmtPa2kTPAuaYa', 'eddpEgY-U5BPCwvVXcC5', '2021-06-03 19:04:29', '14elbert@example.org', '2021-06-03 19:04:29.679068', '2021-06-03 19:04:29.679068')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"xwdGiC11_znGobExxwGy5A\":{\"token\":\"$2a$04$uBt/G1Kiq3KvjTQsIPca/ePan4hT5Razy4Qr1glnCvO76i60uYlg.\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.681519' WHERE `users`.`id` = 1288[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/posts/1248/comments/582" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::CommentsController#destroy as HTML
+  Parameters: {"post_id"=>"1248", "id"=>"582"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '14elbert@example.org' LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1248 LIMIT 1[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1248 AND `comments`.`id` = 582 LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Filter chain halted as :owned_comment rendered or redirected
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 853)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `comments`[0m
+  [1m[35m (8.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '15esteban@example.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('15esteban@example.org', '$2a$04$SWnW41XWfXCZ0VCu2ree5eXhLb7FHjQ7JAQKPQL7LM4YK6Qd/SZEi', 'BZ3iMFN7LRNKBzrwf1xy', '2021-06-03 19:04:29', '15esteban@example.org', '2021-06-03 19:04:29.701261', '2021-06-03 19:04:29.701261')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1289, '2021-06-03 19:04:29.702817', '2021-06-03 19:04:29.702817')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"HuiysJb0TBDBPhNeivUGFg\":{\"token\":\"$2a$04$soD7JXVVoWjS7yor2RE9We7oOi8YzKEvJZ3L0sVLKk1Mus80xebRa\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.705355' WHERE `users`.`id` = 1289[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posts/1249" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::PostsController#show as HTML
+  Parameters: {"id"=>"1249"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '15esteban@example.org' LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1249 LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Post (0.17ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1289 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1289 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 2191)
+  [1m[35m (5.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '16arminda_lesch@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('16arminda_lesch@example.com', '$2a$04$gMjy5TxfKL8Jjeu34zotEuU5DMcJ3koI.uhQXxa3B47/Mvj2rGHf6', '3x8HkGKWk9dvySiMa_Dn', '2021-06-03 19:04:29', '16arminda_lesch@example.com', '2021-06-03 19:04:29.734318', '2021-06-03 19:04:29.734318')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1290, '2021-06-03 19:04:29.739275', '2021-06-03 19:04:29.739275')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"--n_NNOpsdt1sXftNz39Og\":{\"token\":\"$2a$04$LCf1XE9VjR/bMWE278oGfudGqpYdkcnNysA9nPckB2Pz8Y1l57CCW\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.746251' WHERE `users`.`id` = 1290[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posts/1250" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::PostsController#show as HTML
+  Parameters: {"id"=>"1250"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '16arminda_lesch@example.com' LIMIT 1[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1250 LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Post (0.18ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1290 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1290 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.5ms | Allocations: 1884)
+  [1m[35m (4.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '17kelvin@example.net' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('17kelvin@example.net', '$2a$04$CcSZgB4jXOSXqK/b/g6NMerrTf9eiLXdF69mi/CNNA2lPSXlYhSLa', 'QjQXvziywF68nPHR2UXW', '2021-06-03 19:04:29', '17kelvin@example.net', '2021-06-03 19:04:29.770012', '2021-06-03 19:04:29.770012')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"aoYQKdoNVbS7ZmtO97-gww\":{\"token\":\"$2a$04$M/T246yEzeU69OFUKu4A9edFPUWgGIL83wCVF9.Dj9Yb5mKbK2oCC\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.772833' WHERE `users`.`id` = 1291[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/posts" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::PostsController#create as HTML
+  Parameters: {"post"=>{"body"=>"Yay!"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '17kelvin@example.net' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Yay!', 1291, '2021-06-03 19:04:29.778801', '2021-06-03 19:04:29.778801')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1291 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1291 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 6ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 2263)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `posts`[0m
+  [1m[35m (9.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '18warren@example.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('18warren@example.org', '$2a$04$PTilOKb7bRxtGpWWVCunV.GTIGQYrDejun8mH.tBkJ9hVI6gusFwa', 'ZgwYS31XqmbmXhzXU9EW', '2021-06-03 19:04:29', '18warren@example.org', '2021-06-03 19:04:29.796657', '2021-06-03 19:04:29.796657')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"fhWQ6I0WcBk3FGkYHBam9A\":{\"token\":\"$2a$04$sTfLggLh68YAQV57kOZsDOdY4zvZ9JX8UYNd9xUZu7ZBdllNihaJS\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.799332' WHERE `users`.`id` = 1292[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/posts" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::PostsController#create as HTML
+  Parameters: {"post"=>{"body"=>"Yay!"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '18warren@example.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Yay!', 1292, '2021-06-03 19:04:29.805471', '2021-06-03 19:04:29.805471')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1292 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1292 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 6ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 2262)
+  [1m[35m (7.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '19lashawn.ziemann@example.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('19lashawn.ziemann@example.org', '$2a$04$5hR0./kSkPHmLHWk.vvAEu1TMZ8GoA43gSU1MmYV28KpB0mFcgJPe', 'QCenoZ_R__QNkXqLn5T5', '2021-06-03 19:04:29', '19lashawn.ziemann@example.org', '2021-06-03 19:04:29.820616', '2021-06-03 19:04:29.820616')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1293, '2021-06-03 19:04:29.822130', '2021-06-03 19:04:29.822130')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"yav5e-Zq5Iq7VltPNE7Tfg\":{\"token\":\"$2a$04$6Ctz4Yx6K0kXn.0BWzvhIOh4inPbOO4LzUzzih3..BJvfWwGCv4gO\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.824686' WHERE `users`.`id` = 1293[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/api/v1/posts/1253" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::PostsController#update as HTML
+  Parameters: {"post"=>{"body"=>"Yay!"}, "id"=>"1253"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '19lashawn.ziemann@example.org' LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1253 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1293 LIMIT 1[0m
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE `posts` SET `posts`.`body` = 'Yay!', `posts`.`updated_at` = '2021-06-03 19:04:29.832659' WHERE `posts`.`id` = 1253[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1293 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1293 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 2803)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1253 LIMIT 1[0m
+  [1m[35m (8.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '20dustin@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('20dustin@example.com', '$2a$04$iBnc8sFVhx.szSZiAfGihuZf89HO4slBTZY6lJiv4onxJxDvbqDvu', 'zJb6V69bh_9YSG9pTg_x', '2021-06-03 19:04:29', '20dustin@example.com', '2021-06-03 19:04:29.849714', '2021-06-03 19:04:29.849714')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1294, '2021-06-03 19:04:29.851217', '2021-06-03 19:04:29.851217')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"khK7N8hefEsDmTHumAVy5g\":{\"token\":\"$2a$04$oV9iS69I5qVotP2OuMH3luBzeV3wNI8Z2evCC1Mw6n8tMWXpOKC7W\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.853626' WHERE `users`.`id` = 1294[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/api/v1/posts/1254" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::PostsController#update as HTML
+  Parameters: {"post"=>{"body"=>"Yay!"}, "id"=>"1254"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '20dustin@example.com' LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1254 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1294 LIMIT 1[0m
+  [1m[36mPost Update (0.2ms)[0m  [1m[33mUPDATE `posts` SET `posts`.`body` = 'Yay!', `posts`.`updated_at` = '2021-06-03 19:04:29.860885' WHERE `posts`.`id` = 1254[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1294 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1294 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 1.8ms | Allocations: 2591)
+  [1m[35m (5.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '21winifred@example.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('21winifred@example.org', '$2a$04$.C2eX1SyZTY6fadE60jeI./oTs6jvRGfX7rA091xVVGNNEKglca4.', 'ar8B3dyfr98rTrk3g-Le', '2021-06-03 19:04:29', '21winifred@example.org', '2021-06-03 19:04:29.885956', '2021-06-03 19:04:29.885956')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1295, '2021-06-03 19:04:29.889861', '2021-06-03 19:04:29.889861')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '22laurie_howell@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('22laurie_howell@example.com', '$2a$04$dhtsi7ZLhaiNIfBH2LrvtulzXxbMAJs5lwXQVPu1ttsqh78GaqS1O', 'UUqtx8z3pPPiz1_Pnk3Q', '2021-06-03 19:04:29', '22laurie_howell@example.com', '2021-06-03 19:04:29.896904', '2021-06-03 19:04:29.896904')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"WLD5EfJSuP8FFUx5v5A_6Q\":{\"token\":\"$2a$04$2j36c3zzWoJZ0lUfTzkd6ut5/QMcAd8.XBNKal6lvigMjTRHudLkS\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.901256' WHERE `users`.`id` = 1296[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/api/v1/posts/1255" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::PostsController#update as HTML
+  Parameters: {"post"=>{"body"=>"Yay!"}, "id"=>"1255"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '22laurie_howell@example.com' LIMIT 1[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1255 LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :owned_post rendered or redirected
+Completed 422 Unprocessable Entity in 4ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 531)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1255 LIMIT 1[0m
+  [1m[35m (5.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '23horacio.trantow@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('23horacio.trantow@example.com', '$2a$04$OrvCsbaqCfzY8Zcx2Hz8tOsUjHw971piwM9CunZI4egaJ8tepiC82', 'Tdr7hto6cbdQqPH3tV4T', '2021-06-03 19:04:29', '23horacio.trantow@example.com', '2021-06-03 19:04:29.931416', '2021-06-03 19:04:29.931416')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1297, '2021-06-03 19:04:29.935620', '2021-06-03 19:04:29.935620')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"t2Gr7Lh2T1i5w__h4pZYuQ\":{\"token\":\"$2a$04$BNlOkG.AEA8ccZrindvqeOs/dsw3RLlDBlhetAcaWy5crq4eb6oHy\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.940863' WHERE `users`.`id` = 1297[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/posts/1256" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::PostsController#destroy as HTML
+  Parameters: {"id"=>"1256"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '23horacio.trantow@example.com' LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1256 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1256[0m
+  [1m[36mPost Destroy (0.3ms)[0m  [1m[31mDELETE FROM `posts` WHERE `posts`.`id` = 1256[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1297 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1297 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 2211)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `posts`[0m
+  [1m[35m (6.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '24ferdinand@example.net' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('24ferdinand@example.net', '$2a$04$64o2h0lrjcQXfiueEs0WO.cU3U8hPq9Nx1w01Lhai7/zJ78UPGGAu', 'XTLDfFLvF4xdQfgPWzQK', '2021-06-03 19:04:29', '24ferdinand@example.net', '2021-06-03 19:04:29.977924', '2021-06-03 19:04:29.977924')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1298, '2021-06-03 19:04:29.981075', '2021-06-03 19:04:29.981075')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"nAwoELdpmF1bputvwK8Z0w\":{\"token\":\"$2a$04$6AV6xILpwvp7TgyN7z1n4O01.ntSf0mXvY9rBUo1siy9GmegMPVhC\",\"expiry\":1623956669,\"updated_at\":\"2021-06-03T19:04:29Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:29.985157' WHERE `users`.`id` = 1298[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/posts/1257" for 127.0.0.1 at 2021-06-03 22:04:29 +0300
+Processing by Api::V1::PostsController#destroy as HTML
+  Parameters: {"id"=>"1257"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '24ferdinand@example.net' LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1257 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 1257[0m
+  [1m[36mPost Destroy (0.2ms)[0m  [1m[31mDELETE FROM `posts` WHERE `posts`.`id` = 1257[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1298 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1298 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 2190)
+  [1m[35m (7.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '25kendall.becker@example.net' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('25kendall.becker@example.net', '$2a$04$4ZVhK/ZNt5y/p3S59qTUg.SQQrrgzQhETrbaipgoWsFmtIo4/HwdK', 'LscrrjFn5A5AZ3W4VvHn', '2021-06-03 19:04:30', '25kendall.becker@example.net', '2021-06-03 19:04:30.012868', '2021-06-03 19:04:30.012868')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1299, '2021-06-03 19:04:30.015751', '2021-06-03 19:04:30.015751')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '26aleen@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('26aleen@example.com', '$2a$04$KGKU862zHMazfkMXRTI68OaspGTiIqQsW5YelGtim5xJnaEqyTPjS', 'RArCAZ2sxF9yDhNLKjQj', '2021-06-03 19:04:30', '26aleen@example.com', '2021-06-03 19:04:30.020803', '2021-06-03 19:04:30.020803')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"bVZT6UUF7q6thcRvjEbWPg\":{\"token\":\"$2a$04$u.Aqeeq/v69MoD/Q5SKlHuEmvydPXM8YU6FiqJlL8WgFBh6iezSgy\",\"expiry\":1623956670,\"updated_at\":\"2021-06-03T19:04:30Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:30.024140' WHERE `users`.`id` = 1300[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/posts/1258" for 127.0.0.1 at 2021-06-03 22:04:30 +0300
+Processing by Api::V1::PostsController#destroy as HTML
+  Parameters: {"id"=>"1258"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '26aleen@example.com' LIMIT 1[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1258 LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Filter chain halted as :owned_post rendered or redirected
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 526)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `posts`[0m
+  [1m[35m (5.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '27jonas@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('27jonas@example.com', '$2a$04$K5JKZJqujjgDHkuGuSmlRuYlHkaaGN8G7M1.hFJvcgFBQDfI90nc2', 'UdLQkgBpYpxy9xyJcetw', '2021-06-03 19:04:30', '27jonas@example.com', '2021-06-03 19:04:30.047874', '2021-06-03 19:04:30.047874')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1301, '2021-06-03 19:04:30.050683', '2021-06-03 19:04:30.050683')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1301, 1259, '2021-06-03 19:04:30.052842', '2021-06-03 19:04:30.052842')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"m2oD8MV83WjvO9STfrkoFw\":{\"token\":\"$2a$04$ObRodBfso95kwulG7Op5r.QGUFyprxpxnEEMQsHeqsNhG7yJjqi.a\",\"expiry\":1623956670,\"updated_at\":\"2021-06-03T19:04:30Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:30.056689' WHERE `users`.`id` = 1301[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/comments/583/reactions" for 127.0.0.1 at 2021-06-03 22:04:30 +0300
+Processing by Api::V1::ReactionsController#create as HTML
+  Parameters: {"reaction"=>{"emote"=>"like"}, "comment_id"=>"583"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '27jonas@example.com' LIMIT 1[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 583 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1301 LIMIT 1[0m
+  [1m[36mReaction Create (0.3ms)[0m  [1m[32mINSERT INTO `reactions` (`emote`, `user_id`, `comment_id`, `created_at`, `updated_at`) VALUES (0, 1301, 583, '2021-06-03 19:04:30.068105', '2021-06-03 19:04:30.068105')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1301 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1301 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 9ms (Views: 0.5ms | ActiveRecord: 2.1ms | Allocations: 3183)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `posts`[0m
+  [1m[35m (4.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '28jude@example.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('28jude@example.org', '$2a$04$8qOERd0gd3FdnVHdPjMta.dJ1wMTbLZfw2/KIDE4inVXdT3paAToW', 'Su167BWv-jvr3AqUzi4K', '2021-06-03 19:04:30', '28jude@example.org', '2021-06-03 19:04:30.081670', '2021-06-03 19:04:30.081670')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1302, '2021-06-03 19:04:30.083251', '2021-06-03 19:04:30.083251')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1302, 1260, '2021-06-03 19:04:30.084584', '2021-06-03 19:04:30.084584')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"HXoOsB4y5-c5aNLa8xOMqQ\":{\"token\":\"$2a$04$.8RH3Hvwdj8jVR/bK0GooeoPYLr011tb9Z0JwLxaprYo9Mjdo7zy.\",\"expiry\":1623956670,\"updated_at\":\"2021-06-03T19:04:30Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:30.087121' WHERE `users`.`id` = 1302[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/comments/584/reactions" for 127.0.0.1 at 2021-06-03 22:04:30 +0300
+Processing by Api::V1::ReactionsController#create as HTML
+  Parameters: {"reaction"=>{"emote"=>"like"}, "comment_id"=>"584"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '28jude@example.org' LIMIT 1[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 584 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1302 LIMIT 1[0m
+  [1m[36mReaction Create (0.2ms)[0m  [1m[32mINSERT INTO `reactions` (`emote`, `user_id`, `comment_id`, `created_at`, `updated_at`) VALUES (0, 1302, 584, '2021-06-03 19:04:30.094930', '2021-06-03 19:04:30.094930')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1302 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1302 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 8ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 2781)
+  [1m[35m (7.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '29jennifer.bergstrom@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('29jennifer.bergstrom@example.com', '$2a$04$8aitOULyYaPFSiyTUj09VudpOEGyAU.5SPJlTNH6R2BMAS/OJhvyi', 'vsVyGvPB6dUVZHqxngVj', '2021-06-03 19:04:30', '29jennifer.bergstrom@example.com', '2021-06-03 19:04:30.109432', '2021-06-03 19:04:30.109432')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1303, '2021-06-03 19:04:30.110863', '2021-06-03 19:04:30.110863')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.1ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1303, 1261, '2021-06-03 19:04:30.112022', '2021-06-03 19:04:30.112022')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReaction Create (0.1ms)[0m  [1m[32mINSERT INTO `reactions` (`emote`, `user_id`, `comment_id`, `created_at`, `updated_at`) VALUES (0, 1303, 585, '2021-06-03 19:04:30.113152', '2021-06-03 19:04:30.113152')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"IJzqMV88uKLB7WYbw6Mddw\":{\"token\":\"$2a$04$v6BnqIvXvp0hjYQIIdwm6ek9f8sHR8fqgvQkbN3oFfeK3miyA7AIK\",\"expiry\":1623956670,\"updated_at\":\"2021-06-03T19:04:30Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:30.115449' WHERE `users`.`id` = 1303[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/comments/585/reactions/165" for 127.0.0.1 at 2021-06-03 22:04:30 +0300
+Processing by Api::V1::ReactionsController#destroy as HTML
+  Parameters: {"comment_id"=>"585", "id"=>"165"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '29jennifer.bergstrom@example.com' LIMIT 1[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 585 LIMIT 1[0m
+  [1m[36mReaction Load (0.1ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` WHERE `reactions`.`comment_id` = 585 AND `reactions`.`id` = 165 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM `reactions` WHERE `reactions`.`id` = 165[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1303 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1303 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 2294)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `reactions`[0m
+  [1m[35m (6.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '30grover@example.net' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('30grover@example.net', '$2a$04$g1Eht0kmugt71WjW4M0qkeQ03ngbt02VlC1wN.zNsLpW1IiSJEirC', 'Cfta6f1h_gx8tzbyKAGC', '2021-06-03 19:04:30', '30grover@example.net', '2021-06-03 19:04:30.144648', '2021-06-03 19:04:30.144648')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1304, '2021-06-03 19:04:30.148206', '2021-06-03 19:04:30.148206')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1304, 1262, '2021-06-03 19:04:30.150921', '2021-06-03 19:04:30.150921')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReaction Create (0.3ms)[0m  [1m[32mINSERT INTO `reactions` (`emote`, `user_id`, `comment_id`, `created_at`, `updated_at`) VALUES (0, 1304, 586, '2021-06-03 19:04:30.153100', '2021-06-03 19:04:30.153100')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"yoC592nxtvc1Uk8wCGScmA\":{\"token\":\"$2a$04$5/6153i10lF.XjSbA6cRKe4DC9vhco2S4N.OKJWlbAUQCJ0JihgT2\",\"expiry\":1623956670,\"updated_at\":\"2021-06-03T19:04:30Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:30.157141' WHERE `users`.`id` = 1304[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/comments/586/reactions/166" for 127.0.0.1 at 2021-06-03 22:04:30 +0300
+Processing by Api::V1::ReactionsController#destroy as HTML
+  Parameters: {"comment_id"=>"586", "id"=>"166"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '30grover@example.net' LIMIT 1[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 586 LIMIT 1[0m
+  [1m[36mReaction Load (0.2ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` WHERE `reactions`.`comment_id` = 586 AND `reactions`.`id` = 166 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM `reactions` WHERE `reactions`.`id` = 166[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1304 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1304 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 2291)
+  [1m[35m (4.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '31cletus@example.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('31cletus@example.org', '$2a$04$NHUwUSH6cJeOx1abPgf1mO5G9GFE5xJVD763hK1h4sxxjScPMmyCe', 'D5R1bt2omjt93thjXM5V', '2021-06-03 19:04:30', '31cletus@example.org', '2021-06-03 19:04:30.180225', '2021-06-03 19:04:30.180225')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1305, '2021-06-03 19:04:30.182096', '2021-06-03 19:04:30.182096')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1305, 1263, '2021-06-03 19:04:30.183709', '2021-06-03 19:04:30.183709')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReaction Create (0.2ms)[0m  [1m[32mINSERT INTO `reactions` (`emote`, `user_id`, `comment_id`, `created_at`, `updated_at`) VALUES (0, 1305, 587, '2021-06-03 19:04:30.185303', '2021-06-03 19:04:30.185303')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '32ginny@example.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('32ginny@example.org', '$2a$04$yaxVrewkyW6Mvp7hKYsQ1.jJyuzHF1UxJdmIPrHXLxp0T9F0RIokG', 'dhgLv2SQ_YNAnjSxs8ta', '2021-06-03 19:04:30', '32ginny@example.org', '2021-06-03 19:04:30.190037', '2021-06-03 19:04:30.190037')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"8OQZD6PCTVeWhneh3eJNRA\":{\"token\":\"$2a$04$qywQh/Vifojnw/ofooiac.WepItUcEvWyDg2e2y1vacAREiRMBZD2\",\"expiry\":1623956670,\"updated_at\":\"2021-06-03T19:04:30Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:30.193073' WHERE `users`.`id` = 1306[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/comments/587/reactions/167" for 127.0.0.1 at 2021-06-03 22:04:30 +0300
+Processing by Api::V1::ReactionsController#destroy as HTML
+  Parameters: {"comment_id"=>"587", "id"=>"167"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '32ginny@example.org' LIMIT 1[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 587 LIMIT 1[0m
+  [1m[36mReaction Load (0.1ms)[0m  [1m[34mSELECT `reactions`.* FROM `reactions` WHERE `reactions`.`comment_id` = 587 AND `reactions`.`id` = 167 LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Filter chain halted as :owned_reaction rendered or redirected
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 853)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `reactions`[0m
+  [1m[35m (5.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '33valeri@example.net' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('33valeri@example.net', '$2a$04$zcer.OeiGQfDCcxNA/vvUO85yELZFBYf6B8yp.1CxjTjrCo263G5i', 'o6hYp7_VS9V9GvnpshWu', '2021-06-03 19:04:30', '33valeri@example.net', '2021-06-03 19:04:30.216407', '2021-06-03 19:04:30.216407')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1307, '2021-06-03 19:04:30.219555', '2021-06-03 19:04:30.219555')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '34dewayne_keler@example.net' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('34dewayne_keler@example.net', '$2a$04$cLsX4Rtk5F6WvCcCRZBZseph2N0U9Qhh9dPqU.tC0VBmqeaMVVI5e', 'yqEr13xwTqSRt2m_uXs7', '2021-06-03 19:04:30', '34dewayne_keler@example.net', '2021-06-03 19:04:30.225214', '2021-06-03 19:04:30.225214')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff 2.', 1308, '2021-06-03 19:04:30.227157', '2021-06-03 19:04:30.227157')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"Vp9-SD92IArD1_XDfIoMeQ\":{\"token\":\"$2a$04$jOn5qR6Qv.vZKoh6/fHjhuN8ez6.ZTpKhuNFVyMu3nqMwXw5hz/Dy\",\"expiry\":1623956670,\"updated_at\":\"2021-06-03T19:04:30Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:30.230454' WHERE `users`.`id` = 1307[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/users/1307/posts" for 127.0.0.1 at 2021-06-03 22:04:30 +0300
+Processing by Api::V1::UsersController#posts as HTML
+  Parameters: {"id"=>"1307"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '33valeri@example.net' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1307 LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`user_id` = 1307[0m
+No serializer found for resource: #<Post id: 1264, body: "Nice stuff.", user_id: 1307, created_at: "2021-06-03 19:04:30", updated_at: "2021-06-03 19:04:30">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Associations_CollectionProxy (0.14ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1307 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1307 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 1.0ms | Allocations: 2585)
+  [1m[35m (5.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '35jermaine@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('35jermaine@example.com', '$2a$04$3gm/U.tgboETekWj1Z9TGe3DVl6z4zYHvvOLLUd48MmJ1Rlk8tgxK', 'W9536szD52sxSBiSWuUj', '2021-06-03 19:04:30', '35jermaine@example.com', '2021-06-03 19:04:30.256591', '2021-06-03 19:04:30.256591')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1309, '2021-06-03 19:04:30.259310', '2021-06-03 19:04:30.259310')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '36vince@example.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('36vince@example.org', '$2a$04$bcQVvtfurw5iRl5U739jROWO8rGiw4/zZPlu9vY4Z/GmFlMPGq8v.', '28hoU4CsBrdDQcp23c8T', '2021-06-03 19:04:30', '36vince@example.org', '2021-06-03 19:04:30.265308', '2021-06-03 19:04:30.265308')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff 2.', 1310, '2021-06-03 19:04:30.267611', '2021-06-03 19:04:30.267611')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"Qlq2b9p6iMT96uTK4pyVmQ\":{\"token\":\"$2a$04$uo9287aMDeTroFSwwXnfyO3ItO.SD6VZZ18f2nCUU67N8nHMzMwSC\",\"expiry\":1623956670,\"updated_at\":\"2021-06-03T19:04:30Z\"}}', `users`.`updated_at` = '2021-06-03 19:04:30.270991' WHERE `users`.`id` = 1309[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/users/1309/posts" for 127.0.0.1 at 2021-06-03 22:04:30 +0300
+Processing by Api::V1::UsersController#posts as HTML
+  Parameters: {"id"=>"1309"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = '35jermaine@example.com' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1309 LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`user_id` = 1309[0m
+No serializer found for resource: #<Post id: 1266, body: "Nice stuff.", user_id: 1309, created_at: "2021-06-03 19:04:30", updated_at: "2021-06-03 19:04:30">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Associations_CollectionProxy (0.23ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1309 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1309 LIMIT 1 FOR UPDATE[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 9ms (Views: 1.4ms | ActiveRecord: 1.9ms | Allocations: 2180)
+  [1m[35m (4.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '37krysten.sawayn@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('37krysten.sawayn@example.com', '$2a$04$bFUSyMt/CREzynyWhn.nE.7t5cnvOFQHsLWGHXmWy3yRheiPaRpqe', 'uT5KPK6Q-N-sfkDfcyJA', '2021-06-03 19:04:30', '37krysten.sawayn@example.com', '2021-06-03 19:04:30.295070', '2021-06-03 19:04:30.295070')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1311, '2021-06-03 19:04:30.296865', '2021-06-03 19:04:30.296865')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1311, 1268, '2021-06-03 19:04:30.298549', '2021-06-03 19:04:30.298549')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (3.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '38lynwood.hoeger@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('38lynwood.hoeger@example.com', '$2a$04$PNHU90nn/fERAbsp27CbUOt4JwiPbZZeQ9lCoi10BN/S1jYzTx336', '9CSMZimEqAzHQPa1XxUr', '2021-06-03 19:04:30', '38lynwood.hoeger@example.com', '2021-06-03 19:04:30.308037', '2021-06-03 19:04:30.308037')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1312, '2021-06-03 19:04:30.309721', '2021-06-03 19:04:30.309721')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1312, 1269, '2021-06-03 19:04:30.311076', '2021-06-03 19:04:30.311076')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (4.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '39violette@example.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('39violette@example.org', '$2a$04$09T2rliZ5.KWcVw9USTFc..ntxDQyolJP8NvV23AQDXGF2JiLTLh.', 'L4mx1PP5uZWziJfREP-q', '2021-06-03 19:04:30', '39violette@example.org', '2021-06-03 19:04:30.321282', '2021-06-03 19:04:30.321282')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1313, '2021-06-03 19:04:30.322790', '2021-06-03 19:04:30.322790')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1313, 1270, '2021-06-03 19:04:30.323941', '2021-06-03 19:04:30.323941')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (4.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '40angelo@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('40angelo@example.com', '$2a$04$SgjS52nXKE04ldaPQbKpMuFy8Kkw.DkdTR2rSxj.TbUaKSP/Yv2K.', 'rBgsWzfvx4tTQgy6njq-', '2021-06-03 19:04:30', '40angelo@example.com', '2021-06-03 19:04:30.332902', '2021-06-03 19:04:30.332902')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1314, '2021-06-03 19:04:30.334347', '2021-06-03 19:04:30.334347')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.1ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1314, 1271, '2021-06-03 19:04:30.335602', '2021-06-03 19:04:30.335602')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (4.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '41betsy@example.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `email`, `created_at`, `updated_at`) VALUES ('41betsy@example.com', '$2a$04$6p0ckGjkE1U5QaHYKK95Ge62skF6mnoN66hHVjbj9JIVwSS/RLzsi', 'qsAN2mh4GVaqynZ4bEpL', '2021-06-03 19:04:30', '41betsy@example.com', '2021-06-03 19:04:30.347094', '2021-06-03 19:04:30.347094')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO `posts` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('Nice stuff.', 1315, '2021-06-03 19:04:30.348458', '2021-06-03 19:04:30.348458')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.1ms)[0m  [1m[32mINSERT INTO `comments` (`body`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES ('deep and meaningful comment', 1315, 1272, '2021-06-03 19:04:30.349542', '2021-06-03 19:04:30.349542')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (5.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
