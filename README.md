@@ -1,9 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
 Rails-blog-api is an API that handles interaction with posts, comments, and reactions on those comments.
 
 * Ruby version
@@ -25,12 +21,6 @@ Rails-blog-api is an API that handles interaction with posts, comments, and reac
   $ rake db:migrate
   ```
 
-* Running tests
-  This app contains specs(Rspec):
-  ```console
-  $ rspec
-  ```
-
 * Configuration
   After installing the dependencies, you can run the project:
   ```console
@@ -38,7 +28,7 @@ Rails-blog-api is an API that handles interaction with posts, comments, and reac
   $ rails s
   ```
 
-* How to run the test suite
+* Running tests
   This app contains specs, for running those specs simply run:
   ```console
   $ rspec
