@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Posts API', type: :request do
   let(:api_version)  { '/api/v1/' }
   let(:user)         { create(:user) }
+  let(:second_user)  { create(:user) }
   let(:blog_post)    { create(:post, user: user, body: 'Nice stuff.') }
   let(:auth_headers) { user.create_new_auth_token }
 
@@ -37,12 +38,12 @@ RSpec.describe 'Posts API', type: :request do
   end
 
   describe 'PATCH /posts/:id' do
-    before do
-      blog_post
-      patch "#{api_version}posts/#{blog_post.id}", params: { post: { body: 'Yay!' } }, headers: auth_headers
-    end
-
     context 'Valid' do
+      before do
+        blog_post
+        patch "#{api_version}posts/#{blog_post.id}", params: { post: { body: 'Yay!' } }, headers: auth_headers
+      end
+
       it 'updates post' do
         blog_post.reload
         expect(blog_post.body).to eq('Yay!')
@@ -52,21 +53,38 @@ RSpec.describe 'Posts API', type: :request do
         expect(response).to have_http_status :success
       end
     end
+
+    context 'post does not belong to current_user' do
+      it 'should not update' do
+        blog_post
+        patch "#{api_version}posts/#{blog_post.id}", params: { post: { body: 'Yay!' } }, headers: second_user.create_new_auth_token
+        blog_post.reload
+        expect(blog_post.body).not_to eq('Yay!')
+      end
+    end
   end
 
   describe 'DELETE /posts/:id' do
-    before do
-      blog_post
-      delete "#{api_version}posts/#{blog_post.id}", headers: auth_headers
-    end
-
     context 'Valid' do
+      before do
+        blog_post
+        delete "#{api_version}posts/#{blog_post.id}", headers: auth_headers
+      end
+
       it 'destroys post' do
         expect(Post.all.size).to eq(0)
       end
 
       it 'returns status success' do
         expect(response).to have_http_status :success
+      end
+    end
+
+    context 'post does not belong to current_user' do
+      it 'should not delete' do
+        blog_post
+        delete "#{api_version}posts/#{blog_post.id}", headers: second_user.create_new_auth_token
+        expect(Post.all.size).to eq(1)
       end
     end
   end

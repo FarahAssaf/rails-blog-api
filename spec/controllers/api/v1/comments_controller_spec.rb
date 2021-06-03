@@ -45,12 +45,12 @@ RSpec.describe 'Comments API', type: :request do
   end
 
   describe 'PATCH /posts/:post_id/comments/:id' do
-    before do
-      blog_post
-      patch "#{uri}/#{comment.id}", params: { comment: { body: 'Yay!' } }, headers: auth_headers
-    end
-
     context 'Valid' do
+      before do
+        blog_post
+        patch "#{uri}/#{comment.id}", params: { comment: { body: 'Yay!' } }, headers: auth_headers
+      end
+
       it 'updates comment' do
         comment.reload
         expect(comment.body).to eq('Yay!')
@@ -60,21 +60,38 @@ RSpec.describe 'Comments API', type: :request do
         expect(response).to have_http_status :success
       end
     end
+
+    context 'comment does not belong to current_user' do
+      it 'should not update' do
+        blog_post
+        patch "#{uri}/#{comment.id}", params: { comment: { body: 'Yay!' } }, headers: second_user.create_new_auth_token
+        comment.reload
+        expect(comment.body).not_to eq('Yay!')
+      end
+    end
   end
 
   describe 'DELETE /posts/:post_id/comments/:id' do
-    before do
-      blog_post
-      delete "#{uri}/#{comment.id}", headers: auth_headers
-    end
-
     context 'Valid' do
+      before do
+        blog_post
+        delete "#{uri}/#{comment.id}", headers: auth_headers
+      end
+
       it 'destroys comment' do
         expect(Comment.all.size).to eq(0)
       end
 
       it 'returns status success' do
         expect(response).to have_http_status :success
+      end
+    end
+
+    context 'comment does not belong to current_user' do
+      it 'should not delete' do
+        blog_post
+        delete "#{uri}/#{comment.id}", headers: second_user.create_new_auth_token
+        expect(Comment.all.size).to eq(1)
       end
     end
   end
