@@ -2,6 +2,7 @@ class Api::V1::CommentsController < ApplicationController
   before_action :authenticate_api_v1_user!
   before_action :set_post
   before_action :set_comment, only: %i[update destroy]
+  before_action :owned_comment, only: %i[update destroy]
 
   def index
     render json: @post.comments, status: :ok
@@ -45,5 +46,11 @@ class Api::V1::CommentsController < ApplicationController
 
   def set_comment
     @comment = @post.comments.find(params[:id])
+  end
+
+  def owned_comment
+    return if @comment.user_id == current_api_v1_user.id
+
+    render json: { message: 'Unable to proceed' }, status: :unprocessable_entity
   end
 end
