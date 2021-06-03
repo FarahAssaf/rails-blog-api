@@ -1267,3 +1267,583 @@ Processing by CommentsController#index as */*
 Completed 200 OK in 30ms (Views: 15.9ms | ActiveRecord: 6.5ms | Allocations: 16912)
 
 
+Started GET "/posts/1/comments" for 127.0.0.1 at 2021-06-01 18:14:41 +0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by CommentsController#index as */*
+  Parameters: {"post_id"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 6852)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2021-06-01 18:14:51 +0300
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test2@user.com", "password"=>"[FILTERED]"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 516)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2021-06-01 18:14:53 +0300
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test2@user.com", "password"=>"[FILTERED]"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 267)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2021-06-01 18:14:53 +0300
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test2@user.com", "password"=>"[FILTERED]"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 267)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2021-06-01 18:15:00 +0300
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test2@user.com", "password"=>"[FILTERED]"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 267)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2021-06-01 18:15:20 +0300
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test2@user.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (BINARY email = 'test2@user.com' AND provider= 'email') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"u28gzrzHloM92nd0lQFrmQ\":{\"token\":\"$2a$10$9le63GGEuQGco1fnCL76SusBUS8dJxnZqFw58Zm8AzNS64HhVF3wy\",\"expiry\":1623705770,\"last_token\":\"$2a$10$nfqq9HCwe/lbXBPA5LLxcOYWTIjiq.YmjL0O7rChheyYR8QgM5JuO\",\"updated_at\":\"2021-05-31T21:22:50Z\"},\"sNnrVh41oTy1yDojzQYYrw\":{\"token\":\"$2a$10$pG9grBF1Xd6/NLNlskFJL.C6NlGmrmn7pgewhry.0lEApS4CAvkCe\",\"expiry\":1623770120}}', `users`.`updated_at` = '2021-06-01 15:15:20.495501' WHERE `users`.`id` = 1[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 2, `users`.`current_sign_in_at` = '2021-06-01 15:15:20', `users`.`updated_at` = '2021-06-01 15:15:20.510777' WHERE `users`.`id` = 1[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[36mUser Update (13.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"u28gzrzHloM92nd0lQFrmQ\":{\"token\":\"$2a$10$9le63GGEuQGco1fnCL76SusBUS8dJxnZqFw58Zm8AzNS64HhVF3wy\",\"expiry\":1623705770,\"last_token\":\"$2a$10$nfqq9HCwe/lbXBPA5LLxcOYWTIjiq.YmjL0O7rChheyYR8QgM5JuO\",\"updated_at\":\"2021-05-31T21:22:50Z\"},\"sNnrVh41oTy1yDojzQYYrw\":{\"token\":\"$2a$10$f5geisWI/jDPJC8wIXaWve/nIOV9yj1n/6hnOgL4YT65jBGoNRtfK\",\"expiry\":1623770120,\"last_token\":\"$2a$10$pG9grBF1Xd6/NLNlskFJL.C6NlGmrmn7pgewhry.0lEApS4CAvkCe\",\"updated_at\":\"2021-06-01T15:15:20Z\"}}', `users`.`updated_at` = '2021-06-01 15:15:20.570367' WHERE `users`.`id` = 1[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 344ms (Views: 0.5ms | ActiveRecord: 47.3ms | Allocations: 33383)
+
+
+Started GET "/uses/1/posts" for 127.0.0.1 at 2021-06-01 18:16:30 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/uses/1/posts"):
+  
+actionpack (6.0.3.7) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.7) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.7) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.7) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1/posts" for 127.0.0.1 at 2021-06-01 18:16:53 +0300
+Processing by UsersController#posts as */*
+  Parameters: {"id"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 427)
+
+
+Started GET "/users/1/posts" for 127.0.0.1 at 2021-06-01 18:18:01 +0300
+Processing by UsersController#posts as */*
+  Parameters: {"id"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 243)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2021-06-03 15:25:28 +0300
+  [1m[35m (8.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test2@user.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (BINARY email = 'test2@user.com' AND provider= 'email') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (2.0ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"u28gzrzHloM92nd0lQFrmQ\":{\"token\":\"$2a$10$9le63GGEuQGco1fnCL76SusBUS8dJxnZqFw58Zm8AzNS64HhVF3wy\",\"expiry\":1623705770,\"last_token\":\"$2a$10$nfqq9HCwe/lbXBPA5LLxcOYWTIjiq.YmjL0O7rChheyYR8QgM5JuO\",\"updated_at\":\"2021-05-31T21:22:50Z\"},\"sNnrVh41oTy1yDojzQYYrw\":{\"token\":\"$2a$10$f5geisWI/jDPJC8wIXaWve/nIOV9yj1n/6hnOgL4YT65jBGoNRtfK\",\"expiry\":1623770120,\"last_token\":\"$2a$10$pG9grBF1Xd6/NLNlskFJL.C6NlGmrmn7pgewhry.0lEApS4CAvkCe\",\"updated_at\":\"2021-06-01T15:15:20Z\"},\"i9YzaXVANLi_4Pis5aD-8Q\":{\"token\":\"$2a$10$D7q/ugYYPTybZBMRr0s7Xu0QaW.x8K7dINpbreCZJSqxqLZPulCJq\",\"expiry\":1623932729}}', `users`.`updated_at` = '2021-06-03 12:25:29.189090' WHERE `users`.`id` = 1[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 3, `users`.`current_sign_in_at` = '2021-06-03 12:25:29', `users`.`last_sign_in_at` = '2021-06-01 15:15:20', `users`.`updated_at` = '2021-06-03 12:25:29.212923' WHERE `users`.`id` = 1[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"u28gzrzHloM92nd0lQFrmQ\":{\"token\":\"$2a$10$9le63GGEuQGco1fnCL76SusBUS8dJxnZqFw58Zm8AzNS64HhVF3wy\",\"expiry\":1623705770,\"last_token\":\"$2a$10$nfqq9HCwe/lbXBPA5LLxcOYWTIjiq.YmjL0O7rChheyYR8QgM5JuO\",\"updated_at\":\"2021-05-31T21:22:50Z\"},\"sNnrVh41oTy1yDojzQYYrw\":{\"token\":\"$2a$10$f5geisWI/jDPJC8wIXaWve/nIOV9yj1n/6hnOgL4YT65jBGoNRtfK\",\"expiry\":1623770120,\"last_token\":\"$2a$10$pG9grBF1Xd6/NLNlskFJL.C6NlGmrmn7pgewhry.0lEApS4CAvkCe\",\"updated_at\":\"2021-06-01T15:15:20Z\"},\"i9YzaXVANLi_4Pis5aD-8Q\":{\"token\":\"$2a$10$I7gsP67ZEPuOjLfAmjbq3ei/Kb0IsVGhpaYBTyeAMqnc2qUUu4Oii\",\"expiry\":1623932729,\"last_token\":\"$2a$10$D7q/ugYYPTybZBMRr0s7Xu0QaW.x8K7dINpbreCZJSqxqLZPulCJq\",\"updated_at\":\"2021-06-03T12:25:29Z\"}}', `users`.`updated_at` = '2021-06-03 12:25:29.325562' WHERE `users`.`id` = 1[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 514ms (Views: 2.9ms | ActiveRecord: 45.8ms | Allocations: 33850)
+
+
+Started GET "/users/1/posts" for 127.0.0.1 at 2021-06-03 15:25:48 +0300
+Processing by UsersController#posts as */*
+  Parameters: {"id"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1314ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1015830)
+
+
+Started GET "/users/1/posts" for 127.0.0.1 at 2021-06-03 15:28:42 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/posts"):
+  
+actionpack (6.0.3.7) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.7) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.7) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.7) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/users/1/posts" for 127.0.0.1 at 2021-06-03 15:28:59 +0300
+  
+ActionController::RoutingError (uninitialized constant Api):
+  
+actionpack (6.0.3.7) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3.7) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3.7) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3.7) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3.7) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3.7) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.7) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.7) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.7) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.7) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.7) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.7) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.7) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.7) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/auth/sign_in" for 127.0.0.1 at 2021-06-03 15:29:13 +0300
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test2@user.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (BINARY email = 'test2@user.com' AND provider= 'email') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"u28gzrzHloM92nd0lQFrmQ\":{\"token\":\"$2a$10$9le63GGEuQGco1fnCL76SusBUS8dJxnZqFw58Zm8AzNS64HhVF3wy\",\"expiry\":1623705770,\"last_token\":\"$2a$10$nfqq9HCwe/lbXBPA5LLxcOYWTIjiq.YmjL0O7rChheyYR8QgM5JuO\",\"updated_at\":\"2021-05-31T21:22:50Z\"},\"sNnrVh41oTy1yDojzQYYrw\":{\"token\":\"$2a$10$f5geisWI/jDPJC8wIXaWve/nIOV9yj1n/6hnOgL4YT65jBGoNRtfK\",\"expiry\":1623770120,\"last_token\":\"$2a$10$pG9grBF1Xd6/NLNlskFJL.C6NlGmrmn7pgewhry.0lEApS4CAvkCe\",\"updated_at\":\"2021-06-01T15:15:20Z\"},\"i9YzaXVANLi_4Pis5aD-8Q\":{\"token\":\"$2a$10$I7gsP67ZEPuOjLfAmjbq3ei/Kb0IsVGhpaYBTyeAMqnc2qUUu4Oii\",\"expiry\":1623932729,\"last_token\":\"$2a$10$D7q/ugYYPTybZBMRr0s7Xu0QaW.x8K7dINpbreCZJSqxqLZPulCJq\",\"updated_at\":\"2021-06-03T12:25:29Z\"},\"dI6eqUOCuSdoHndasqmvwg\":{\"token\":\"$2a$10$tk3bzrmYe50mTYczeadukeKE4T0KawZF/YHzQ0.SVBkZ3UOSg5Owu\",\"expiry\":1623932954}}', `users`.`updated_at` = '2021-06-03 12:29:14.274179' WHERE `users`.`id` = 1[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 4, `users`.`current_sign_in_at` = '2021-06-03 12:29:14', `users`.`last_sign_in_at` = '2021-06-03 12:25:29', `users`.`updated_at` = '2021-06-03 12:29:14.295799' WHERE `users`.`id` = 1[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"u28gzrzHloM92nd0lQFrmQ\":{\"token\":\"$2a$10$9le63GGEuQGco1fnCL76SusBUS8dJxnZqFw58Zm8AzNS64HhVF3wy\",\"expiry\":1623705770,\"last_token\":\"$2a$10$nfqq9HCwe/lbXBPA5LLxcOYWTIjiq.YmjL0O7rChheyYR8QgM5JuO\",\"updated_at\":\"2021-05-31T21:22:50Z\"},\"sNnrVh41oTy1yDojzQYYrw\":{\"token\":\"$2a$10$f5geisWI/jDPJC8wIXaWve/nIOV9yj1n/6hnOgL4YT65jBGoNRtfK\",\"expiry\":1623770120,\"last_token\":\"$2a$10$pG9grBF1Xd6/NLNlskFJL.C6NlGmrmn7pgewhry.0lEApS4CAvkCe\",\"updated_at\":\"2021-06-01T15:15:20Z\"},\"i9YzaXVANLi_4Pis5aD-8Q\":{\"token\":\"$2a$10$I7gsP67ZEPuOjLfAmjbq3ei/Kb0IsVGhpaYBTyeAMqnc2qUUu4Oii\",\"expiry\":1623932729,\"last_token\":\"$2a$10$D7q/ugYYPTybZBMRr0s7Xu0QaW.x8K7dINpbreCZJSqxqLZPulCJq\",\"updated_at\":\"2021-06-03T12:25:29Z\"},\"dI6eqUOCuSdoHndasqmvwg\":{\"token\":\"$2a$10$CEl7UlFve1Vd9HDeYVSkNuNR227pxey0PFr3o3jJDzn0WnaX6bYfy\",\"expiry\":1623932954,\"last_token\":\"$2a$10$tk3bzrmYe50mTYczeadukeKE4T0KawZF/YHzQ0.SVBkZ3UOSg5Owu\",\"updated_at\":\"2021-06-03T12:29:14Z\"}}', `users`.`updated_at` = '2021-06-03 12:29:14.386787' WHERE `users`.`id` = 1[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 498ms (Views: 0.9ms | ActiveRecord: 42.7ms | Allocations: 31763)
+
+
+Started POST "/api/v1/auth/sign_in" for 127.0.0.1 at 2021-06-03 15:30:55 +0300
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test2@user.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (BINARY email = 'test2@user.com' AND provider= 'email') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"u28gzrzHloM92nd0lQFrmQ\":{\"token\":\"$2a$10$9le63GGEuQGco1fnCL76SusBUS8dJxnZqFw58Zm8AzNS64HhVF3wy\",\"expiry\":1623705770,\"last_token\":\"$2a$10$nfqq9HCwe/lbXBPA5LLxcOYWTIjiq.YmjL0O7rChheyYR8QgM5JuO\",\"updated_at\":\"2021-05-31T21:22:50Z\"},\"sNnrVh41oTy1yDojzQYYrw\":{\"token\":\"$2a$10$f5geisWI/jDPJC8wIXaWve/nIOV9yj1n/6hnOgL4YT65jBGoNRtfK\",\"expiry\":1623770120,\"last_token\":\"$2a$10$pG9grBF1Xd6/NLNlskFJL.C6NlGmrmn7pgewhry.0lEApS4CAvkCe\",\"updated_at\":\"2021-06-01T15:15:20Z\"},\"i9YzaXVANLi_4Pis5aD-8Q\":{\"token\":\"$2a$10$I7gsP67ZEPuOjLfAmjbq3ei/Kb0IsVGhpaYBTyeAMqnc2qUUu4Oii\",\"expiry\":1623932729,\"last_token\":\"$2a$10$D7q/ugYYPTybZBMRr0s7Xu0QaW.x8K7dINpbreCZJSqxqLZPulCJq\",\"updated_at\":\"2021-06-03T12:25:29Z\"},\"dI6eqUOCuSdoHndasqmvwg\":{\"token\":\"$2a$10$CEl7UlFve1Vd9HDeYVSkNuNR227pxey0PFr3o3jJDzn0WnaX6bYfy\",\"expiry\":1623932954,\"last_token\":\"$2a$10$tk3bzrmYe50mTYczeadukeKE4T0KawZF/YHzQ0.SVBkZ3UOSg5Owu\",\"updated_at\":\"2021-06-03T12:29:14Z\"},\"-ZrGsWOAdhusZquwrxexpw\":{\"token\":\"$2a$10$tGSkvOHN28jVdC24dv/KQetIPUpmET.ywDK2ASFD0OlwnR7ZwXPjO\",\"expiry\":1623933055}}', `users`.`updated_at` = '2021-06-03 12:30:55.563992' WHERE `users`.`id` = 1[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 5, `users`.`current_sign_in_at` = '2021-06-03 12:30:55', `users`.`last_sign_in_at` = '2021-06-03 12:29:14', `users`.`updated_at` = '2021-06-03 12:30:55.582380' WHERE `users`.`id` = 1[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"u28gzrzHloM92nd0lQFrmQ\":{\"token\":\"$2a$10$9le63GGEuQGco1fnCL76SusBUS8dJxnZqFw58Zm8AzNS64HhVF3wy\",\"expiry\":1623705770,\"last_token\":\"$2a$10$nfqq9HCwe/lbXBPA5LLxcOYWTIjiq.YmjL0O7rChheyYR8QgM5JuO\",\"updated_at\":\"2021-05-31T21:22:50Z\"},\"sNnrVh41oTy1yDojzQYYrw\":{\"token\":\"$2a$10$f5geisWI/jDPJC8wIXaWve/nIOV9yj1n/6hnOgL4YT65jBGoNRtfK\",\"expiry\":1623770120,\"last_token\":\"$2a$10$pG9grBF1Xd6/NLNlskFJL.C6NlGmrmn7pgewhry.0lEApS4CAvkCe\",\"updated_at\":\"2021-06-01T15:15:20Z\"},\"i9YzaXVANLi_4Pis5aD-8Q\":{\"token\":\"$2a$10$I7gsP67ZEPuOjLfAmjbq3ei/Kb0IsVGhpaYBTyeAMqnc2qUUu4Oii\",\"expiry\":1623932729,\"last_token\":\"$2a$10$D7q/ugYYPTybZBMRr0s7Xu0QaW.x8K7dINpbreCZJSqxqLZPulCJq\",\"updated_at\":\"2021-06-03T12:25:29Z\"},\"dI6eqUOCuSdoHndasqmvwg\":{\"token\":\"$2a$10$CEl7UlFve1Vd9HDeYVSkNuNR227pxey0PFr3o3jJDzn0WnaX6bYfy\",\"expiry\":1623932954,\"last_token\":\"$2a$10$tk3bzrmYe50mTYczeadukeKE4T0KawZF/YHzQ0.SVBkZ3UOSg5Owu\",\"updated_at\":\"2021-06-03T12:29:14Z\"},\"-ZrGsWOAdhusZquwrxexpw\":{\"token\":\"$2a$10$9BUpIqSJxCfesdA1almR.exS7yOfToRvuZRusvIPcV9oSXLDojRjC\",\"expiry\":1623933055,\"last_token\":\"$2a$10$tGSkvOHN28jVdC24dv/KQetIPUpmET.ywDK2ASFD0OlwnR7ZwXPjO\",\"updated_at\":\"2021-06-03T12:30:55Z\"}}', `users`.`updated_at` = '2021-06-03 12:30:55.678366' WHERE `users`.`id` = 1[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 497ms (Views: 0.9ms | ActiveRecord: 40.6ms | Allocations: 31944)
+
+
+Started GET "/api/v1/users/1/posts" for 127.0.0.1 at 2021-06-03 15:31:02 +0300
+  
+Zeitwerk::NameError (expected file /home/obada-zenhr/rails-blog-api/app/controllers/api/v1/users_controller.rb to define constant Api::V1::UsersController, but didn't):
+  
+zeitwerk (2.4.2) lib/zeitwerk/loader/callbacks.rb:18:in `on_file_autoloaded'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:27:in `block in require'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:26:in `tap'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:26:in `require'
+activesupport (6.0.3.7) lib/active_support/inflector/methods.rb:284:in `const_get'
+activesupport (6.0.3.7) lib/active_support/inflector/methods.rb:284:in `block in constantize'
+activesupport (6.0.3.7) lib/active_support/inflector/methods.rb:280:in `each'
+activesupport (6.0.3.7) lib/active_support/inflector/methods.rb:280:in `inject'
+activesupport (6.0.3.7) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (6.0.3.7) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.0.3.7) lib/action_dispatch/http/request.rb:89:in `controller_class_for'
+actionpack (6.0.3.7) lib/action_dispatch/http/parameters.rb:100:in `binary_params_for?'
+actionpack (6.0.3.7) lib/action_dispatch/http/parameters.rb:91:in `set_binary_encoding'
+actionpack (6.0.3.7) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (6.0.3.7) lib/action_dispatch/journey/router.rb:47:in `block in serve'
+actionpack (6.0.3.7) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.7) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.7) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.7) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.7) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.7) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.7) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.7) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/users/1/posts" for 127.0.0.1 at 2021-06-03 15:31:55 +0300
+Processing by Api::V1::UsersController#posts as */*
+  Parameters: {"id"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 480)
+
+
+Started GET "/api/v1/users/1/posts" for 127.0.0.1 at 2021-06-03 15:32:08 +0300
+Processing by Api::V1::UsersController#posts as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:3:in `posts'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`user_id` = 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `posts'
+No serializer found for resource: #<Post id: 1, body: "Hello World!", user_id: 1, created_at: "2021-05-31 21:29:20", updated_at: "2021-05-31 21:29:20">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Associations_CollectionProxy (0.19ms)
+Completed 200 OK in 67ms (Views: 14.4ms | ActiveRecord: 6.7ms | Allocations: 21076)
+
+
+Started GET "/api/v1/users/1/posts" for 127.0.0.1 at 2021-06-03 15:54:48 +0300
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::UsersController#posts as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:3:in `posts'
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`user_id` = 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `posts'
+No serializer found for resource: #<Post id: 1, body: "Hello World!", user_id: 1, created_at: "2021-05-31 21:29:20", updated_at: "2021-05-31 21:29:20">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Associations_CollectionProxy (0.23ms)
+Completed 200 OK in 50ms (Views: 10.7ms | ActiveRecord: 8.3ms | Allocations: 22692)
+
+
+Started POST "/posts" for 127.0.0.1 at 2021-06-03 16:36:48 +0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+ActionController::RoutingError (No route matches [POST] "/posts"):
+  
+actionpack (6.0.3.7) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.7) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.7) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.7) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/api/v1/posts" for 127.0.0.1 at 2021-06-03 16:37:00 +0300
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"body"=>"testing postman"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 7ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 6752)
+
+
+Started POST "/api/v1/auth/sign_in" for 127.0.0.1 at 2021-06-03 16:37:10 +0300
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test2@user.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (BINARY email = 'test2@user.com' AND provider= 'email') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"u28gzrzHloM92nd0lQFrmQ\":{\"token\":\"$2a$10$9le63GGEuQGco1fnCL76SusBUS8dJxnZqFw58Zm8AzNS64HhVF3wy\",\"expiry\":1623705770,\"last_token\":\"$2a$10$nfqq9HCwe/lbXBPA5LLxcOYWTIjiq.YmjL0O7rChheyYR8QgM5JuO\",\"updated_at\":\"2021-05-31T21:22:50Z\"},\"sNnrVh41oTy1yDojzQYYrw\":{\"token\":\"$2a$10$f5geisWI/jDPJC8wIXaWve/nIOV9yj1n/6hnOgL4YT65jBGoNRtfK\",\"expiry\":1623770120,\"last_token\":\"$2a$10$pG9grBF1Xd6/NLNlskFJL.C6NlGmrmn7pgewhry.0lEApS4CAvkCe\",\"updated_at\":\"2021-06-01T15:15:20Z\"},\"i9YzaXVANLi_4Pis5aD-8Q\":{\"token\":\"$2a$10$I7gsP67ZEPuOjLfAmjbq3ei/Kb0IsVGhpaYBTyeAMqnc2qUUu4Oii\",\"expiry\":1623932729,\"last_token\":\"$2a$10$D7q/ugYYPTybZBMRr0s7Xu0QaW.x8K7dINpbreCZJSqxqLZPulCJq\",\"updated_at\":\"2021-06-03T12:25:29Z\"},\"dI6eqUOCuSdoHndasqmvwg\":{\"token\":\"$2a$10$CEl7UlFve1Vd9HDeYVSkNuNR227pxey0PFr3o3jJDzn0WnaX6bYfy\",\"expiry\":1623932954,\"last_token\":\"$2a$10$tk3bzrmYe50mTYczeadukeKE4T0KawZF/YHzQ0.SVBkZ3UOSg5Owu\",\"updated_at\":\"2021-06-03T12:29:14Z\"},\"-ZrGsWOAdhusZquwrxexpw\":{\"token\":\"$2a$10$9BUpIqSJxCfesdA1almR.exS7yOfToRvuZRusvIPcV9oSXLDojRjC\",\"expiry\":1623933055,\"last_token\":\"$2a$10$tGSkvOHN28jVdC24dv/KQetIPUpmET.ywDK2ASFD0OlwnR7ZwXPjO\",\"updated_at\":\"2021-06-03T12:30:55Z\"},\"FzbzKgR8n-LKy6wzyfkIRg\":{\"token\":\"$2a$10$SIAaUiclq2T/sg1j0ktU1upKf0rCi8//xbu/f.ZYvydHyseIEn9Xy\",\"expiry\":1623937030}}', `users`.`updated_at` = '2021-06-03 13:37:10.689770' WHERE `users`.`id` = 1[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 6, `users`.`current_sign_in_at` = '2021-06-03 13:37:10', `users`.`last_sign_in_at` = '2021-06-03 12:30:55', `users`.`updated_at` = '2021-06-03 13:37:10.715740' WHERE `users`.`id` = 1[0m
+  [1m[35m (12.6ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"u28gzrzHloM92nd0lQFrmQ\":{\"token\":\"$2a$10$9le63GGEuQGco1fnCL76SusBUS8dJxnZqFw58Zm8AzNS64HhVF3wy\",\"expiry\":1623705770,\"last_token\":\"$2a$10$nfqq9HCwe/lbXBPA5LLxcOYWTIjiq.YmjL0O7rChheyYR8QgM5JuO\",\"updated_at\":\"2021-05-31T21:22:50Z\"},\"sNnrVh41oTy1yDojzQYYrw\":{\"token\":\"$2a$10$f5geisWI/jDPJC8wIXaWve/nIOV9yj1n/6hnOgL4YT65jBGoNRtfK\",\"expiry\":1623770120,\"last_token\":\"$2a$10$pG9grBF1Xd6/NLNlskFJL.C6NlGmrmn7pgewhry.0lEApS4CAvkCe\",\"updated_at\":\"2021-06-01T15:15:20Z\"},\"i9YzaXVANLi_4Pis5aD-8Q\":{\"token\":\"$2a$10$I7gsP67ZEPuOjLfAmjbq3ei/Kb0IsVGhpaYBTyeAMqnc2qUUu4Oii\",\"expiry\":1623932729,\"last_token\":\"$2a$10$D7q/ugYYPTybZBMRr0s7Xu0QaW.x8K7dINpbreCZJSqxqLZPulCJq\",\"updated_at\":\"2021-06-03T12:25:29Z\"},\"dI6eqUOCuSdoHndasqmvwg\":{\"token\":\"$2a$10$CEl7UlFve1Vd9HDeYVSkNuNR227pxey0PFr3o3jJDzn0WnaX6bYfy\",\"expiry\":1623932954,\"last_token\":\"$2a$10$tk3bzrmYe50mTYczeadukeKE4T0KawZF/YHzQ0.SVBkZ3UOSg5Owu\",\"updated_at\":\"2021-06-03T12:29:14Z\"},\"-ZrGsWOAdhusZquwrxexpw\":{\"token\":\"$2a$10$9BUpIqSJxCfesdA1almR.exS7yOfToRvuZRusvIPcV9oSXLDojRjC\",\"expiry\":1623933055,\"last_token\":\"$2a$10$tGSkvOHN28jVdC24dv/KQetIPUpmET.ywDK2ASFD0OlwnR7ZwXPjO\",\"updated_at\":\"2021-06-03T12:30:55Z\"},\"FzbzKgR8n-LKy6wzyfkIRg\":{\"token\":\"$2a$10$jnV7uloY/gtzOokOFN9cee/meMilEZ0KdO.KAalVovVRkY6oi9dNe\",\"expiry\":1623937030,\"last_token\":\"$2a$10$SIAaUiclq2T/sg1j0ktU1upKf0rCi8//xbu/f.ZYvydHyseIEn9Xy\",\"updated_at\":\"2021-06-03T13:37:10Z\"}}', `users`.`updated_at` = '2021-06-03 13:37:10.817089' WHERE `users`.`id` = 1[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 505ms (Views: 0.5ms | ActiveRecord: 38.0ms | Allocations: 32487)
+
+
+Started POST "/api/v1/posts" for 127.0.0.1 at 2021-06-03 16:37:14 +0300
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"body"=>"testing postman"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 242)
+
+
+Started GET "/api/v1/users/1/posts" for 127.0.0.1 at 2021-06-03 16:37:21 +0300
+Processing by Api::V1::UsersController#posts as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:3:in `posts'
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`user_id` = 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `posts'
+No serializer found for resource: #<Post id: 1, body: "Hello World!", user_id: 1, created_at: "2021-05-31 21:29:20", updated_at: "2021-05-31 21:29:20">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Associations_CollectionProxy (0.34ms)
+Completed 200 OK in 19ms (Views: 12.1ms | ActiveRecord: 1.1ms | Allocations: 5874)
+
+
+Started GET "/api/v1/users/1/posts" for 127.0.0.1 at 2021-06-03 16:37:57 +0300
+Processing by Api::V1::UsersController#posts as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:3:in `posts'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`user_id` = 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `posts'
+No serializer found for resource: #<Post id: 1, body: "Hello World!", user_id: 1, created_at: "2021-05-31 21:29:20", updated_at: "2021-05-31 21:29:20">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Associations_CollectionProxy (0.21ms)
+Completed 200 OK in 42ms (Views: 8.6ms | ActiveRecord: 5.7ms | Allocations: 18740)
+
+
+Started GET "/api/v1/users/1/posts" for 127.0.0.1 at 2021-06-03 16:37:58 +0300
+Processing by Api::V1::UsersController#posts as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:3:in `posts'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`user_id` = 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `posts'
+No serializer found for resource: #<Post id: 1, body: "Hello World!", user_id: 1, created_at: "2021-05-31 21:29:20", updated_at: "2021-05-31 21:29:20">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Associations_CollectionProxy (0.22ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.8ms | Allocations: 1883)
+
+
+Started POST "/api/v1/posts" for 127.0.0.1 at 2021-06-03 16:38:34 +0300
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"body"=>"testing postman"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started POST "/api/v1/posts" for 127.0.0.1 at 2021-06-03 16:38:40 +0300
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"body"=>"testing postman"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 242)
+
+
+Started POST "/api/v1/auth/sign_in" for 127.0.0.1 at 2021-06-03 16:39:00 +0300
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test2@user.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (BINARY email = 'test2@user.com' AND provider= 'email') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"u28gzrzHloM92nd0lQFrmQ\":{\"token\":\"$2a$10$9le63GGEuQGco1fnCL76SusBUS8dJxnZqFw58Zm8AzNS64HhVF3wy\",\"expiry\":1623705770,\"last_token\":\"$2a$10$nfqq9HCwe/lbXBPA5LLxcOYWTIjiq.YmjL0O7rChheyYR8QgM5JuO\",\"updated_at\":\"2021-05-31T21:22:50Z\"},\"sNnrVh41oTy1yDojzQYYrw\":{\"token\":\"$2a$10$f5geisWI/jDPJC8wIXaWve/nIOV9yj1n/6hnOgL4YT65jBGoNRtfK\",\"expiry\":1623770120,\"last_token\":\"$2a$10$pG9grBF1Xd6/NLNlskFJL.C6NlGmrmn7pgewhry.0lEApS4CAvkCe\",\"updated_at\":\"2021-06-01T15:15:20Z\"},\"i9YzaXVANLi_4Pis5aD-8Q\":{\"token\":\"$2a$10$I7gsP67ZEPuOjLfAmjbq3ei/Kb0IsVGhpaYBTyeAMqnc2qUUu4Oii\",\"expiry\":1623932729,\"last_token\":\"$2a$10$D7q/ugYYPTybZBMRr0s7Xu0QaW.x8K7dINpbreCZJSqxqLZPulCJq\",\"updated_at\":\"2021-06-03T12:25:29Z\"},\"dI6eqUOCuSdoHndasqmvwg\":{\"token\":\"$2a$10$CEl7UlFve1Vd9HDeYVSkNuNR227pxey0PFr3o3jJDzn0WnaX6bYfy\",\"expiry\":1623932954,\"last_token\":\"$2a$10$tk3bzrmYe50mTYczeadukeKE4T0KawZF/YHzQ0.SVBkZ3UOSg5Owu\",\"updated_at\":\"2021-06-03T12:29:14Z\"},\"-ZrGsWOAdhusZquwrxexpw\":{\"token\":\"$2a$10$9BUpIqSJxCfesdA1almR.exS7yOfToRvuZRusvIPcV9oSXLDojRjC\",\"expiry\":1623933055,\"last_token\":\"$2a$10$tGSkvOHN28jVdC24dv/KQetIPUpmET.ywDK2ASFD0OlwnR7ZwXPjO\",\"updated_at\":\"2021-06-03T12:30:55Z\"},\"FzbzKgR8n-LKy6wzyfkIRg\":{\"token\":\"$2a$10$jnV7uloY/gtzOokOFN9cee/meMilEZ0KdO.KAalVovVRkY6oi9dNe\",\"expiry\":1623937030,\"last_token\":\"$2a$10$SIAaUiclq2T/sg1j0ktU1upKf0rCi8//xbu/f.ZYvydHyseIEn9Xy\",\"updated_at\":\"2021-06-03T13:37:10Z\"},\"HI-ktKyNmLd3ZpvDFybJpQ\":{\"token\":\"$2a$10$hlGBM2xczjYzLZ4u/Mcn3.F3h5KqlJ4Hi2/o/T1kHVupbTkAu71Ki\",\"expiry\":1623937141}}', `users`.`updated_at` = '2021-06-03 13:39:01.133202' WHERE `users`.`id` = 1[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`sign_in_count` = 7, `users`.`current_sign_in_at` = '2021-06-03 13:39:01', `users`.`last_sign_in_at` = '2021-06-03 13:37:10', `users`.`updated_at` = '2021-06-03 13:39:01.149293' WHERE `users`.`id` = 1[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[37mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1 FOR UPDATE[0m
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE `users` SET `users`.`tokens` = '{\"u28gzrzHloM92nd0lQFrmQ\":{\"token\":\"$2a$10$9le63GGEuQGco1fnCL76SusBUS8dJxnZqFw58Zm8AzNS64HhVF3wy\",\"expiry\":1623705770,\"last_token\":\"$2a$10$nfqq9HCwe/lbXBPA5LLxcOYWTIjiq.YmjL0O7rChheyYR8QgM5JuO\",\"updated_at\":\"2021-05-31T21:22:50Z\"},\"sNnrVh41oTy1yDojzQYYrw\":{\"token\":\"$2a$10$f5geisWI/jDPJC8wIXaWve/nIOV9yj1n/6hnOgL4YT65jBGoNRtfK\",\"expiry\":1623770120,\"last_token\":\"$2a$10$pG9grBF1Xd6/NLNlskFJL.C6NlGmrmn7pgewhry.0lEApS4CAvkCe\",\"updated_at\":\"2021-06-01T15:15:20Z\"},\"i9YzaXVANLi_4Pis5aD-8Q\":{\"token\":\"$2a$10$I7gsP67ZEPuOjLfAmjbq3ei/Kb0IsVGhpaYBTyeAMqnc2qUUu4Oii\",\"expiry\":1623932729,\"last_token\":\"$2a$10$D7q/ugYYPTybZBMRr0s7Xu0QaW.x8K7dINpbreCZJSqxqLZPulCJq\",\"updated_at\":\"2021-06-03T12:25:29Z\"},\"dI6eqUOCuSdoHndasqmvwg\":{\"token\":\"$2a$10$CEl7UlFve1Vd9HDeYVSkNuNR227pxey0PFr3o3jJDzn0WnaX6bYfy\",\"expiry\":1623932954,\"last_token\":\"$2a$10$tk3bzrmYe50mTYczeadukeKE4T0KawZF/YHzQ0.SVBkZ3UOSg5Owu\",\"updated_at\":\"2021-06-03T12:29:14Z\"},\"-ZrGsWOAdhusZquwrxexpw\":{\"token\":\"$2a$10$9BUpIqSJxCfesdA1almR.exS7yOfToRvuZRusvIPcV9oSXLDojRjC\",\"expiry\":1623933055,\"last_token\":\"$2a$10$tGSkvOHN28jVdC24dv/KQetIPUpmET.ywDK2ASFD0OlwnR7ZwXPjO\",\"updated_at\":\"2021-06-03T12:30:55Z\"},\"FzbzKgR8n-LKy6wzyfkIRg\":{\"token\":\"$2a$10$jnV7uloY/gtzOokOFN9cee/meMilEZ0KdO.KAalVovVRkY6oi9dNe\",\"expiry\":1623937030,\"last_token\":\"$2a$10$SIAaUiclq2T/sg1j0ktU1upKf0rCi8//xbu/f.ZYvydHyseIEn9Xy\",\"updated_at\":\"2021-06-03T13:37:10Z\"},\"HI-ktKyNmLd3ZpvDFybJpQ\":{\"token\":\"$2a$10$eIfNsCh2Jm28Ev7EnQeMbuLcqxf2LXM0mt1o6KrvjoD0thwgKyfg2\",\"expiry\":1623937141,\"last_token\":\"$2a$10$hlGBM2xczjYzLZ4u/Mcn3.F3h5KqlJ4Hi2/o/T1kHVupbTkAu71Ki\",\"updated_at\":\"2021-06-03T13:39:01Z\"}}', `users`.`updated_at` = '2021-06-03 13:39:01.253359' WHERE `users`.`id` = 1[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 501ms (Views: 0.9ms | ActiveRecord: 42.8ms | Allocations: 19778)
+
+
+Started GET "/api/v1/users/1/posts" for 127.0.0.1 at 2021-06-03 16:39:05 +0300
+Processing by Api::V1::UsersController#posts as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:3:in `posts'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`user_id` = 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `posts'
+No serializer found for resource: #<Post id: 1, body: "Hello World!", user_id: 1, created_at: "2021-05-31 21:29:20", updated_at: "2021-05-31 21:29:20">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Associations_CollectionProxy (0.33ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.8ms | Allocations: 1893)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+Started GET "/api/v1/users/1/posts" for 127.0.0.1 at 2021-06-03 16:42:41 +0300
+Processing by Api::V1::UsersController#posts as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:3:in `posts'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`user_id` = 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `posts'
+No serializer found for resource: #<Post id: 1, body: "Hello World!", user_id: 1, created_at: "2021-05-31 21:29:20", updated_at: "2021-05-31 21:29:20">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Associations_CollectionProxy (0.19ms)
+Completed 200 OK in 44ms (Views: 9.9ms | ActiveRecord: 7.2ms | Allocations: 18804)
+
+
+Started POST "/api/v1/posts" for 127.0.0.1 at 2021-06-03 16:42:52 +0300
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"body"=>"testing postman"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Started GET "/api/v1/users/1/posts" for 127.0.0.1 at 2021-06-03 16:43:13 +0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::UsersController#posts as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:3:in `posts'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`user_id` = 1[0m
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `posts'
+No serializer found for resource: #<Post id: 1, body: "Hello World!", user_id: 1, created_at: "2021-05-31 21:29:20", updated_at: "2021-05-31 21:29:20">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Associations_CollectionProxy (0.21ms)
+Completed 200 OK in 48ms (Views: 9.5ms | ActiveRecord: 6.7ms | Allocations: 22682)
+
+
+Started POST "/api/v1/posts" for 127.0.0.1 at 2021-06-03 16:43:33 +0300
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"body"=>"testing postman"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 98ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 181433)
+
+
+Started POST "/api/v1/posts" for 127.0.0.1 at 2021-06-03 16:43:41 +0300
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"body"=>"testing postman"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authenticate_api_v1_user! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 242)
+
+
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/obada-zenhr/.rvm/gems/ruby-2.7.0/bin/rake:23)
+Started POST "/api/v1/posts" for 127.0.0.1 at 2021-06-03 16:49:26 +0300
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"body"=>"testing postman"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 1047)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/api/v1/posts_controller.rb:38:in `post_params'
+app/controllers/api/v1/posts_controller.rb:10:in `create'
+Started POST "/api/v1/posts" for 127.0.0.1 at 2021-06-03 16:49:54 +0300
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"post"=>{":body"=>"testing postman"}}
+[31mUnpermitted parameter: ::body[0m
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 0.0ms | Allocations: 80927)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<Api::V1::PostsController:0x00007fcc045a20a8>
+Did you mean?  current_api_v1_user):
+  
+app/controllers/api/v1/posts_controller.rb:11:in `create'
+Started POST "/api/v1/posts" for 127.0.0.1 at 2021-06-03 16:50:31 +0300
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"post"=>{":body"=>"testing postman"}}
+[31mUnpermitted parameter: ::body[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 422 Unprocessable Entity in 17ms (Views: 1.2ms | ActiveRecord: 3.0ms | Allocations: 5437)
+
+
+Started POST "/api/v1/posts" for 127.0.0.1 at 2021-06-03 16:59:10 +0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"post"=>{"body"=>"testing postman"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 422 Unprocessable Entity in 3ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1283)
+
+
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/obada-zenhr/.rvm/gems/ruby-2.7.0/bin/rake:23)
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/obada-zenhr/.rvm/gems/ruby-2.7.0/bin/rake:23)
