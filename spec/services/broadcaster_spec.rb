@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.describe Broadcaster, type: :model do
   let(:user)      { create(:user) }
   let(:blog_post) { create(:post, user: user, body: 'Nice stuff.') }
