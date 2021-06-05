@@ -3,4 +3,5 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   validates :user_id, presence: true
+  after_commit { Broadcaster.new(self).call }
 end

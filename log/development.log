@@ -1847,3 +1847,16 @@ DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed i
  (called from load at /home/obada-zenhr/.rvm/gems/ruby-2.7.0/bin/rake:23)
 DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
  (called from load at /home/obada-zenhr/.rvm/gems/ruby-2.7.0/bin/rake:23)
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY `posts`.`id` ASC LIMIT 1[0m
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY `posts`.`id` ASC LIMIT 1[0m
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY `posts`.`id` ASC LIMIT 1[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY `posts`.`id` ASC LIMIT 1[0m
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY `posts`.`id` ASC LIMIT 1[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY `posts`.`id` ASC LIMIT 1[0m
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY `posts`.`id` ASC LIMIT 1[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY `posts`.`id` ASC LIMIT 1[0m
+[ActionCable] Broadcasting to post_channel_1: {}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY `posts`.`id` ASC LIMIT 1[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY `posts`.`id` ASC LIMIT 1[0m
+[ActionCable] Broadcasting to post_channel_1: {:post_id=>1}
